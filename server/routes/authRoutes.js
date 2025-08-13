@@ -12,9 +12,7 @@ router.post(
     body("password")
       .isLength({ min: 6 })
       .withMessage("Password must be at least 6 characters"),
-    body("role")
-      .isIn(["admin", "freelancer"])
-      .withMessage("Role must be either admin or freelancer")
+    
   ],
   register
 );

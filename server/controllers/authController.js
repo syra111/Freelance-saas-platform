@@ -23,7 +23,7 @@ exports.register = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      role
+      role:role || "freelancer" 
     });
 
     const userData = {
