@@ -4,13 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from './pages/auth/Register'
 import Login from './pages/auth/Login'
 import Home from './pages/Home'
-import Dashboard from './pages/Dashboard'
 import NotFound from './pages/NotFound'
-import Navbar from './components/Navbar';
 import Layout from "./components/Layout";
-
-import Footer from './components/Footer';
-
+import Jobs from './pages/Jobs';
+import JobDetail from './pages/JobDetail';
 function App() {
 
   return (
@@ -20,7 +17,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/jobs" element={<Jobs/>} />
+          <Route path="/jobs/:id" element={<JobDetail />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Layout>
