@@ -17,7 +17,7 @@ const { allowAdminOnly } = require("../middlewares/roleMiddleware");
 
 
 
-// Validation rules
+
 const jobValidation = [
   body("title").notEmpty().withMessage("Title is required"),
   body("description").notEmpty().withMessage("Description is required"),

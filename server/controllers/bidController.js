@@ -8,8 +8,7 @@ exports.placeBid = async (req, res) => {
   const { jobId, bidAmount, timeline, message } = req.body;
 
   try {
-    // Check if already bid on this job
-    const exists = await Bid.findOne({ job: jobId, user: req.user._id });
+ const exists = await Bid.findOne({ job: jobId, user: req.user._id });
     if (exists) {
       return res.status(400).json({ message: "You already bid on this job" });
     }
@@ -58,7 +57,7 @@ exports.updateBidStatus = async (req, res) => {
     if (status === "accepted") {
       await Job.findByIdAndUpdate(bid.job._id, {
         status: "closed",
-        assignedFreelancer: bid.user._id // or "assigned"
+        assignedFreelancer: bid.user._id 
       });
     }
 
